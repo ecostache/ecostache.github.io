@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Emanuel Costache | Data Analyst</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #222222;
+            --accent-color: #3498db;
+            --secondary-color: #ecf0f1;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .container {
+            padding: 3rem 2rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-color);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact a {
+            margin-right: 1rem;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5%;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-color);
+            background: var(--secondary-color);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--secondary-color);
+        }
+
+        .timeline {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+
+        .skill-item {
+            background: var(--secondary-color);
+            padding: 0.4rem 0.7rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 0.2rem;
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                order: 2;
+            }
+
+            .content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.25rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* Terminal-inspired cursor animation */
+        .typing::after {
+            content: "|";
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="typing">Emanuel Costache</h1>
+            <div class="contact">
+                <a href="mailto:hi@emanuelcostache.com">hi@emanuelcostache.com</a>
+                <a href="https://www.linkedin.com/in/ecostache/" target="_blank" rel="noopener noreferrer">@ecostache</a>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="content">
+                <section class="section">
+                    <h2>// Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="timeline">MARCH 2023 - PRESENT</div>
+                        <h3><span class="role">Data and Systems Analyst</span> @ RISE Partnership</h3>
+                        <p>Building Snowflake cloud architecture, automating with Python/Airflow, and delivering insights through Sigma dashboards. Implementing NLP sentiment analysis and statistical frameworks to quantify program effectiveness.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="timeline">SEPTEMBER 2021 - MARCH 2023</div>
+                        <h3><span class="role">Senior Analyst</span> @ Thesis Agency</h3>
+                        <p>Architected BigQuery data warehouse, built ETL pipelines, and delivered client-facing dashboards. Optimized SQL performance and developed ML-based predictive models for content personalization.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="timeline">MAY 2019 - SEPTEMBER 2021</div>
+                        <h3><span class="role">Data Analyst</span> @ University of Portland</h3>
+                        <p>Created Tableau dashboards for fundraising visualization, developed SQL reports and R-based predictive models, and administered key platforms including Tableau Server and Oracle ERP.</p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>// Skills</h2>
+                    <div class="skill-category">
+                        <div class="skills-grid">
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">SQL</div>
+                            <div class="skill-item">R</div>
+                            <div class="skill-item">DAX</div>
+							<div class="skill-item">Snowflake</div>
+                            <div class="skill-item">BigQuery</div>
+                            <div class="skill-item">Redshift</div>
+                            <div class="skill-item">AWS</div>
+                            <div class="skill-item">Airflow</div>
+                            <div class="skill-item">Looker</div>
+                            <div class="skill-item">Tableau</div>
+                            <div class="skill-item">Power BI</div>
+                            <div class="skill-item">Sigma</div>
+                            <div class="skill-item">Git</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="sidebar">
+                <img src="emanuel_costache.jpg" alt="Emanuel Costache" class="profile-photo" />
+                
+                <section class="section">
+                    <h2>// Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="timeline">UNIVERSITY OF PORTLAND</div>
+                        <h3>M.S. Operations and Technology Management</h3>
+                        <p>Focus: Data Analytics</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="timeline">AMHERST COLLEGE</div>
+                        <h3>B.A. English Literature</h3>
+                        <p>Thesis: Historical representations of mathematics in Thomas Pynchon's <em>Against the Day</em></p>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2>// About</h2>
+                    <p>Researcher and data analyst with expertise in building scalable data infrastructure and delivering actionable insights through visualization tools. Specialized in SQL, Python, and cloud data platforms.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
