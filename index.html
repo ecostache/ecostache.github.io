@@ -163,10 +163,26 @@
             .profile-photo {
                 width: 150px;
                 height: 150px;
+                order: 3;
+                margin: 2rem 0 1rem;
+                display: block;
             }
 
             .skills-grid {
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            
+            .sidebar {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .sidebar section:nth-child(1) {
+                order: 1;
+            }
+            
+            .sidebar section:nth-child(2) {
+                order: 2;
             }
         }
 
@@ -188,6 +204,7 @@
         /* Terminal-inspired cursor animation */
         .typing::after {
             content: "|";
+            color: var(--accent-color);
             animation: blink 1s step-end infinite;
         }
 
@@ -203,7 +220,8 @@
             <h1 class="typing">Emanuel Costache</h1>
             <div class="contact">
                 <a href="mailto:hi@emanuelcostache.com">hi@emanuelcostache.com</a>
-                <a href="https://www.linkedin.com/in/ecostache/" target="_blank" rel="noopener noreferrer">@ecostache</a>
+                <a href="https://github.com/ecostache" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/ecostache/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </header>
 
