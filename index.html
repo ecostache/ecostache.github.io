@@ -3,15 +3,42 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Emanuel Costache - Data Analyst specializing in SQL, Python, and cloud data platforms with expertise in building scalable data infrastructure." />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Emanuel Costache | Data Analyst" />
+    <meta property="og:description" content="Data analyst with expertise in SQL, Python, and cloud data platforms." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emanuelcostache.com" />
+    
     <title>Emanuel Costache | Data Analyst</title>
+
     <style>
         :root {
+            /* Color variables */
             --bg-color: #ffffff;
             --text-color: #222222;
             --accent-color: #3498db;
             --secondary-color: #ecf0f1;
             --border-color: #e0e0e0;
+            --hover-color: #2980b9;
+            
+            /* Spacing variables */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-xxl: 3rem;
+            
+            /* Font sizes */
+            --font-xs: 0.8rem;
+            --font-sm: 0.9rem;
+            --font-base: 1rem;
+            --font-md: 1.2rem;
+            --font-lg: 1.5rem;
+            --font-xl: 2rem;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -21,6 +48,7 @@
                 --accent-color: #61dafb;
                 --secondary-color: #2c3e50;
                 --border-color: #333333;
+                --hover-color: #4fd1fe;
             }
         }
 
@@ -30,69 +58,111 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
         body {
             font-family: "Courier New", monospace;
+            font-display: swap;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
             padding: 0;
             max-width: 1000px;
             margin: 0 auto;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
-            padding: 3rem 2rem;
+            padding: var(--space-xxl) var(--space-xl);
         }
 
         header {
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
+            margin-bottom: var(--space-lg);
+            /* border-bottom: 1px solid var(--border-color); */
+            padding-bottom: var(--space-lg);
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: var(--font-xl);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--space-sm);
         }
 
         h2 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
+            font-size: var(--font-md);
+            margin-bottom: var(--space-md);
+            margin-top: var(--space-lg);
             text-transform: uppercase;
             letter-spacing: 0.03em;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 3rem;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 5rem;
         }
 
         h3 {
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
+            font-size: var(--font-base);
+            margin-bottom: var(--space-xs);
             font-weight: normal;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-md);
         }
 
         a {
             color: var(--text-color);
             text-decoration: none;
             border-bottom: 1px solid var(--accent-color);
-            transition: color 0.2s ease;
+            transition: color 0.2s ease, border-color 0.2s ease;
+            padding-bottom: 2px;
         }
 
-        a:hover {
+        a:hover, a:focus {
             color: var(--accent-color);
+            border-color: var(--hover-color);
+            outline: none;
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
         .contact {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .contact a {
-            margin-right: 1rem;
+            margin-top: var(--space-sm);
+            font-size: var(--font-sm);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
         }
 
         .profile-photo {
@@ -100,25 +170,37 @@
             height: 180px;
             object-fit: cover;
             border-radius: 5%;
-            margin: 1.5rem 0;
+            margin: var(--space-lg) 0;
             border: 1px solid var(--border-color);
             background: var(--secondary-color);
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.03);
         }
 
         .section {
-            margin-bottom: 2rem;
+            margin-bottom: var(--space-xl);
         }
 
         .experience-item, .education-item {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-md);
             border-left: 2px solid var(--secondary-color);
+            transition: border-left-color 0.2s ease;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            border-left-color: var(--accent-color);
         }
 
         .timeline {
-            font-size: 0.8rem;
+            font-size: var(--font-xs);
             color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--space-sm);
+            font-weight: bold;
         }
 
         .role {
@@ -128,28 +210,35 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
         }
 
         .skill-category {
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-md);
         }
 
         .skill-item {
             background: var(--secondary-color);
-            padding: 0.4rem 0.7rem;
+            padding: calc(var(--space-xs) * 1.6) var(--space-sm);
             border-radius: 3px;
-            font-size: 0.85rem;
+            font-size: var(--font-sm);
             display: inline-block;
-            margin: 0.2rem;
+            margin: var(--space-xs);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-2px);
+            background-color: var(--accent-color);
+            color: var(--bg-color);
         }
 
         @media (min-width: 768px) {
             .main-content {
                 display: grid;
                 grid-template-columns: 2fr 1fr;
-                gap: 2rem;
+                gap: var(--space-xl);
             }
 
             .sidebar {
@@ -163,19 +252,11 @@
 
         @media (max-width: 767px) {
             .container {
-                padding: 2rem 1rem;
+                padding: var(--space-xl) var(--space-md);
             }
 
             h1 {
-                font-size: 1.5rem;
-            }
-
-            .profile-photo {
-                width: 150px;
-                height: 150px;
-                order: 3;
-                margin: 2rem 0 1rem;
-                display: block;
+                font-size: var(--font-lg);
             }
 
             .skills-grid {
@@ -198,11 +279,18 @@
             .sidebar .photo-container {
                 order: 3;
             }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                margin: var(--space-xl) 0 var(--space-md);
+                display: block;
+            }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 1.5rem 1rem;
+                padding: var(--space-lg) var(--space-md);
             }
 
             h1 {
@@ -212,6 +300,11 @@
             .profile-photo {
                 width: 120px;
                 height: 120px;
+            }
+            
+            .contact {
+                flex-direction: column;
+                gap: var(--space-xs);
             }
         }
 
@@ -229,90 +322,90 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div class="container" role="document">
+        <header role="banner">
             <h1 class="typing">Emanuel Costache</h1>
-            <div class="contact">
-                <a href="mailto:hi@emanuelcostache.com">hi@emanuelcostache.com</a>
-                <a href="https://github.com/ecostache" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://www.linkedin.com/in/ecostache/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <div class="contact" aria-label="Contact Information">
+                <a href="mailto:hi@emanuelcostache.com" aria-label="Email: hi@emanuelcostache.com">hi@emanuelcostache.com</a>
+                <a href="https://github.com/ecostache" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+                <a href="https://www.linkedin.com/in/ecostache/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
             </div>
         </header>
 
-        <div class="main-content">
-            <div class="content">
-                <section class="section">
-                    <h2>// Experience</h2>
+        <main class="main-content">
+            <div class="content" role="main">
+                <section class="section" aria-labelledby="experience-heading">
+                    <h2 id="experience-heading">// Experience</h2>
                     
-                    <div class="experience-item">
+                    <article class="experience-item">
                         <div class="timeline">MARCH 2023 - PRESENT</div>
                         <h3><span class="role">Data and Systems Analyst</span> @ RISE Partnership</h3>
                         <p>Building Snowflake cloud architecture, automating with Python/Airflow, and delivering insights through Sigma dashboards. Implementing NLP sentiment analysis and statistical frameworks to quantify program effectiveness.</p>
-                    </div>
+                    </article>
                     
-                    <div class="experience-item">
+                    <article class="experience-item">
                         <div class="timeline">SEPTEMBER 2021 - MARCH 2023</div>
                         <h3><span class="role">Senior Analyst</span> @ Thesis Agency</h3>
                         <p>Architected BigQuery data warehouse, built ETL pipelines, and delivered client-facing dashboards. Optimized SQL performance and developed ML-based predictive models for content personalization.</p>
-                    </div>
+                    </article>
                     
-                    <div class="experience-item">
+                    <article class="experience-item">
                         <div class="timeline">MAY 2019 - SEPTEMBER 2021</div>
                         <h3><span class="role">Data Analyst</span> @ University of Portland</h3>
                         <p>Created Tableau dashboards for fundraising visualization, developed SQL reports and R-based predictive models, and administered key platforms including Tableau Server and Oracle ERP.</p>
-                    </div>
+                    </article>
                 </section>
 
-                <section class="section">
-                    <h2>// Skills</h2>
+                <section class="section" aria-labelledby="skills-heading">
+                    <h2 id="skills-heading">// Skills</h2>
                     <div class="skill-category">
-                        <div class="skills-grid">
-                            <div class="skill-item">Python</div>
-                            <div class="skill-item">SQL</div>
-                            <div class="skill-item">R</div>
-                            <div class="skill-item">DAX</div>
-							<div class="skill-item">Snowflake</div>
-                            <div class="skill-item">BigQuery</div>
-                            <div class="skill-item">Redshift</div>
-                            <div class="skill-item">AWS</div>
-                            <div class="skill-item">Airflow</div>
-                            <div class="skill-item">Looker</div>
-                            <div class="skill-item">Tableau</div>
-                            <div class="skill-item">Power BI</div>
-                            <div class="skill-item">Sigma</div>
-                            <div class="skill-item">Git</div>
+                        <div class="skills-grid" role="list">
+                            <div class="skill-item" role="listitem">Python</div>
+                            <div class="skill-item" role="listitem">SQL</div>
+                            <div class="skill-item" role="listitem">R</div>
+                            <div class="skill-item" role="listitem">DAX</div>
+                            <div class="skill-item" role="listitem">Snowflake</div>
+                            <div class="skill-item" role="listitem">BigQuery</div>
+                            <div class="skill-item" role="listitem">Redshift</div>
+                            <div class="skill-item" role="listitem">AWS</div>
+                            <div class="skill-item" role="listitem">Airflow</div>
+                            <div class="skill-item" role="listitem">Looker</div>
+                            <div class="skill-item" role="listitem">Tableau</div>
+                            <div class="skill-item" role="listitem">Power BI</div>
+                            <div class="skill-item" role="listitem">Sigma</div>
+                            <div class="skill-item" role="listitem">Git</div>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <div class="sidebar">
+            <aside class="sidebar">
                 <div class="photo-container">
-                    <img src="emanuel_costache.jpg" alt="Emanuel Costache" class="profile-photo" />
+                    <img src="emanuel_costache.jpg" alt="Professional headshot of Emanuel Costache" class="profile-photo" loading="lazy" />
                 </div>
                 
-                <section class="section education-section">
-                    <h2>// Education</h2>
+                <section class="section education-section" aria-labelledby="education-heading">
+                    <h2 id="education-heading">// Education</h2>
                     
-                    <div class="education-item">
+                    <article class="education-item">
                         <div class="timeline">UNIVERSITY OF PORTLAND</div>
                         <h3>M.S. Operations and Technology Management</h3>
                         <p>Focus: Data Analytics</p>
-                    </div>
+                    </article>
                     
-                    <div class="education-item">
+                    <article class="education-item">
                         <div class="timeline">AMHERST COLLEGE</div>
                         <h3>B.A. English Literature</h3>
                         <p>Thesis: Historical representations of mathematics in Thomas Pynchon's <em>Against the Day</em></p>
-                    </div>
+                    </article>
                 </section>
                 
-                <section class="section about-section">
-                    <h2>// About</h2>
+                <section class="section about-section" aria-labelledby="about-heading">
+                    <h2 id="about-heading">// About</h2>
                     <p>Researcher and data analyst with expertise in building scalable data infrastructure and delivering actionable insights through visualization tools. Specialized in SQL, Python, and cloud data platforms.</p>
                 </section>
-            </div>
-        </div>
+            </aside>
+        </main>
     </div>
 </body>
 </html>
