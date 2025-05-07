@@ -187,12 +187,16 @@
                 flex-direction: column;
             }
             
-            .sidebar section:nth-child(1) {
+            .sidebar .education-section {
                 order: 1;
             }
             
-            .sidebar section:nth-child(2) {
+            .sidebar .about-section {
                 order: 2;
+            }
+            
+            .sidebar .photo-container {
+                order: 3;
             }
         }
 
@@ -283,9 +287,11 @@
             </div>
 
             <div class="sidebar">
-                <img src="emanuel_costache.jpg" alt="Emanuel Costache" class="profile-photo" />
+                <div class="photo-container">
+                    <img src="emanuel_costache.jpg" alt="Emanuel Costache" class="profile-photo" />
+                </div>
                 
-                <section class="section">
+                <section class="section education-section">
                     <h2>// Education</h2>
                     
                     <div class="education-item">
@@ -301,7 +307,7 @@
                     </div>
                 </section>
                 
-                <section class="section">
+                <section class="section about-section">
                     <h2>// About</h2>
                     <p>Researcher and data analyst with expertise in building scalable data infrastructure and delivering actionable insights through visualization tools. Specialized in SQL, Python, and cloud data platforms.</p>
                 </section>
