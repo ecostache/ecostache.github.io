@@ -2,15 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="theme-color" content="#3498db" />
+    <meta name="author" content="Emanuel Costache" />
     <meta name="description" content="Emanuel Costache - Data Analyst specializing in SQL, Python, and cloud data platforms with expertise in building scalable data infrastructure." />
-
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Emanuel Costache | Data Analyst" />
-    <meta property="og:description" content="Data analyst with expertise in SQL, Python, and cloud data platforms." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://emanuelcostache.com" />
     
     <title>Emanuel Costache | Data Analyst</title>
 
@@ -65,7 +60,6 @@
 
         body {
             font-family: "Courier New", monospace;
-            font-display: swap;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
@@ -81,7 +75,6 @@
 
         header {
             margin-bottom: var(--space-lg);
-            /* border-bottom: 1px solid var(--border-color); */
             padding-bottom: var(--space-lg);
         }
 
@@ -145,18 +138,6 @@
             outline-offset: 2px;
         }
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
         .contact {
             margin-top: var(--space-sm);
             font-size: var(--font-sm);
@@ -169,7 +150,7 @@
             width: 180px;
             height: 180px;
             object-fit: cover;
-            border-radius: 5%;
+            border-radius: 50%;
             margin: var(--space-lg) 0;
             border: 1px solid var(--border-color);
             background: var(--secondary-color);
@@ -180,9 +161,48 @@
         .profile-photo:hover {
             transform: scale(1.03);
         }
-
+        
+        /* Fade-in animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        header {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
         .section {
-            margin-bottom: var(--space-xl);
+            margin-bottom: var(--space-xxl);
+            animation: fadeIn 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .content .section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        
+        .content .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .sidebar .photo-container {
+            animation: fadeIn 0.8s ease-out 0.15s;
+            animation-fill-mode: both;
+        }
+        
+        .sidebar .education-section {
+            animation-delay: 0.25s;
+        }
+        
+        .sidebar .about-section {
+            animation-delay: 0.35s;
         }
 
         .experience-item, .education-item {
@@ -252,11 +272,15 @@
 
         @media (max-width: 767px) {
             .container {
-                padding: var(--space-xl) var(--space-md);
+                padding: var(--space-xxl) var(--space-lg);
             }
 
             h1 {
                 font-size: var(--font-lg);
+            }
+            
+            h2 {
+                font-size: 1.1rem;
             }
 
             .skills-grid {
@@ -286,25 +310,56 @@
                 margin: var(--space-xl) 0 var(--space-md);
                 display: block;
             }
+            
+            .experience-item, .education-item {
+                padding-left: var(--space-sm);
+                margin-bottom: var(--space-xl);
+            }
+            
+            .timeline {
+                font-size: 0.7rem;
+                margin-bottom: var(--space-xs);
+            }
+            
+            .section {
+                margin-bottom: var(--space-xl);
+            }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: var(--space-lg) var(--space-md);
+                padding: var(--space-xl) var(--space-md);
             }
 
             h1 {
                 font-size: 1.25rem;
             }
+            
+            h2 {
+                font-size: 1rem;
+            }
 
             .profile-photo {
-                width: 120px;
-                height: 120px;
+                width: 130px;
+                height: 130px;
             }
             
             .contact {
                 flex-direction: column;
-                gap: var(--space-xs);
+                gap: var(--space-sm);
+            }
+            
+            .timeline {
+                font-size: 0.65rem;
+            }
+            
+            p {
+                font-size: var(--font-sm);
+            }
+            
+            .skill-item {
+                font-size: 0.85rem;
+                padding: var(--space-xs) var(--space-sm);
             }
         }
 
@@ -322,19 +377,19 @@
     </style>
 </head>
 <body>
-    <div class="container" role="document">
-        <header role="banner">
+    <div class="container">
+        <header>
             <h1 class="typing">Emanuel Costache</h1>
-            <div class="contact" aria-label="Contact Information">
-                <a href="mailto:hi@emanuelcostache.com" aria-label="Email: hi@emanuelcostache.com">hi@emanuelcostache.com</a>
-                <a href="https://github.com/ecostache" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+            <div class="contact">
+                <a href="mailto:hi@emanuelcostache.com">hi@emanuelcostache.com</a>
+                <a href="https://github.com/ecostache" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </header>
 
         <main class="main-content">
-            <div class="content" role="main">
-                <section class="section" aria-labelledby="experience-heading">
-                    <h2 id="experience-heading">Experience</h2>
+            <div class="content">
+                <section class="section">
+                    <h2>Experience</h2>
                     
                     <article class="experience-item">
                         <div class="timeline">MARCH 2023 - PRESENT</div>
@@ -355,24 +410,24 @@
                     </article>
                 </section>
 
-                <section class="section" aria-labelledby="skills-heading">
-                    <h2 id="skills-heading">Skills</h2>
+                <section class="section">
+                    <h2>Skills</h2>
                     <div class="skill-category">
-                        <div class="skills-grid" role="list">
-                            <div class="skill-item" role="listitem">Python</div>
-                            <div class="skill-item" role="listitem">SQL</div>
-                            <div class="skill-item" role="listitem">R</div>
-                            <div class="skill-item" role="listitem">DAX</div>
-                            <div class="skill-item" role="listitem">Snowflake</div>
-                            <div class="skill-item" role="listitem">BigQuery</div>
-                            <div class="skill-item" role="listitem">Redshift</div>
-                            <div class="skill-item" role="listitem">AWS</div>
-                            <div class="skill-item" role="listitem">Airflow</div>
-                            <div class="skill-item" role="listitem">Looker</div>
-                            <div class="skill-item" role="listitem">Tableau</div>
-                            <div class="skill-item" role="listitem">Power BI</div>
-                            <div class="skill-item" role="listitem">Sigma</div>
-                            <div class="skill-item" role="listitem">Git</div>
+                        <div class="skills-grid">
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">SQL</div>
+                            <div class="skill-item">R</div>
+                            <div class="skill-item">DAX</div>
+                            <div class="skill-item">Snowflake</div>
+                            <div class="skill-item">BigQuery</div>
+                            <div class="skill-item">Redshift</div>
+                            <div class="skill-item">AWS</div>
+                            <div class="skill-item">Airflow</div>
+                            <div class="skill-item">Looker</div>
+                            <div class="skill-item">Tableau</div>
+                            <div class="skill-item">Power BI</div>
+                            <div class="skill-item">Sigma</div>
+                            <div class="skill-item">Git</div>
                         </div>
                     </div>
                 </section>
@@ -383,8 +438,8 @@
                     <img src="emanuel_costache.jpg" alt="Professional headshot of Emanuel Costache" class="profile-photo" loading="lazy" />
                 </div>
                 
-                <section class="section education-section" aria-labelledby="education-heading">
-                    <h2 id="education-heading">Education</h2>
+                <section class="section education-section">
+                    <h2>Education</h2>
                     
                     <article class="education-item">
                         <div class="timeline">UNIVERSITY OF PORTLAND</div>
@@ -399,8 +454,8 @@
                     </article>
                 </section>
                 
-                <section class="section about-section" aria-labelledby="about-heading">
-                    <h2 id="about-heading">About</h2>
+                <section class="section about-section">
+                    <h2>About</h2>
                     <p>Analyst with expertise in building scalable data infrastructure and delivering actionable insights with dashboard visualizations. Specialized in SQL, Python, and cloud data platforms.</p>
                 </section>
             </aside>
