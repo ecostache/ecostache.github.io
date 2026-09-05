@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2479ad" />
+    <meta name="author" content="Emanuel Costache" />
+    <meta name="description" content="Emanuel Costache is a senior data analyst with 7+ years of experience in analytics, data integration, reporting, and automation with SQL and Python." />
+    
+    <title>Emanuel Costache | Senior Data Analyst</title>
+
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg-color: #ffffff;
+            --text-color: #222222;
+            --muted-color: #616970;
+            --accent-color: #2479ad;
+            --border-color: #e0e0e0;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-xxl: 3rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #16181a;
+                --text-color: #e7e9eb;
+                --muted-color: #a4abb2;
+                --accent-color: #8ab6d6;
+                --border-color: #353a3e;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, "Helvetica Neue", Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-color);
+        }
+
+        .container {
+            max-width: 920px;
+            margin-inline: auto;
+            padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem);
+        }
+
+        header {
+            margin-bottom: var(--space-xxl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.035em;
+        }
+
+        h2 {
+            margin-bottom: var(--space-lg);
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.015em;
+        }
+
+        h3 {
+            margin-bottom: var(--space-sm);
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            text-decoration-color: var(--accent-color);
+            text-underline-offset: 0.2em;
+            text-decoration-thickness: 1px;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm) var(--space-lg);
+            margin-top: var(--space-md);
+            font-size: 0.9rem;
+        }
+
+        .section {
+            margin-bottom: var(--space-xxl);
+        }
+
+        .experience-item + .experience-item,
+        .education-item + .education-item {
+            margin-top: var(--space-lg);
+        }
+
+        .timeline {
+            margin-bottom: var(--space-sm);
+            color: var(--muted-color);
+            font-size: 0.8rem;
+            letter-spacing: 0.025em;
+        }
+
+        .role {
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+            gap: var(--space-sm) var(--space-lg);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-container {
+            order: 1;
+        }
+
+        .profile-photo {
+            display: block;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        @media (width >= 48em) {
+            .main-content {
+                display: grid;
+                grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+                gap: var(--space-xxl);
+            }
+
+            .photo-container {
+                order: 0;
+                margin-bottom: var(--space-xxl);
+            }
+
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Emanuel Costache</h1>
+            <div class="contact">
+                <a href="mailto:hi@emanuelcostache.com">hi@emanuelcostache.com</a>
+                <a href="tel:+16318672138">631-867-2138</a>
+                <a href="https://github.com/ecostache" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="content">
+                <section class="section">
+                    <h2>Experience</h2>
+                    
+                    <article class="experience-item">
+                        <div class="timeline">MARCH 2023 - PRESENT</div>
+                        <h3><span class="role">Senior Data Analyst</span> • RISE Partnership</h3>
+                        <p>Lead analytics for workforce training and benefits programs serving 165,000 participants. Built longitudinal reporting and automated Snowflake pipelines that saved 200 hours annually.</p>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <div class="timeline">SEPTEMBER 2021 - MARCH 2023</div>
+                        <h3><span class="role">Senior Analyst</span> • Thesis</h3>
+                        <p>Built Python and Fivetran pipelines processing 10,000 daily records in BigQuery and automated reporting across three accounts, cutting preparation time 80% and helping drive a 17% revenue lift.</p>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <div class="timeline">MAY 2019 - SEPTEMBER 2021</div>
+                        <h3><span class="role">Data Analyst</span> • University of Portland</h3>
+                        <p>Delivered Tableau dashboards supporting $10M in annual fundraising and built segmentation and propensity models across 150,000 constituent records.</p>
+                    </article>
+                </section>
+
+                <section class="section">
+                    <h2>Skills</h2>
+                    <ul class="skills-grid">
+                        <li>SQL</li>
+                        <li>Python</li>
+                        <li>ETL / ELT</li>
+                        <li>APIs</li>
+                        <li>Snowflake</li>
+                        <li>BigQuery</li>
+                        <li>Oracle</li>
+                        <li>AWS</li>
+                        <li>Sigma</li>
+                        <li>Tableau</li>
+                        <li>Power BI</li>
+                        <li>A/B Testing</li>
+                    </ul>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <div class="photo-container">
+                    <img src="emanuel_costache.jpg" width="800" height="450" alt="Black-and-white portrait of Emanuel Costache by the coast" class="profile-photo" decoding="async" />
+                </div>
+                
+                <section class="section">
+                    <h2>Education</h2>
+                    
+                    <article class="education-item">
+                        <div class="timeline">UNIVERSITY OF PORTLAND<br>School of Business</div>
+                        <h3>M.S. Operations and Technology Management</h3>
+                    </article>
+                    
+                    <article class="education-item">
+                        <div class="timeline">AMHERST COLLEGE</div>
+                        <h3>B.A. English Literature</h3>
+                    </article>
+                </section>
+                
+                <section class="section">
+                    <h2>About</h2>
+                    <p>Senior data analyst with 7+ years experience leading analytics, data integration, and reporting.</p>
+                </section>
+            </aside>
+        </main>
+    </div>
+</body>
+</html>
